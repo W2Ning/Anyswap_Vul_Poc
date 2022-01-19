@@ -15,16 +15,6 @@ Anyswap aka Multichain V4Router 攻击事件的分析和复现
 ```
 
 
-### 相关地址
-
-{
-    "0x6b7a87899490ece95443e979ca9485cbe7e71522": "AnyswapV4Router",
-    "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2": "WETH",
-    "0x0000000000000000000000000000000000000000": "0x0000...0000"
-    "0x5136e623126d3572933fbafe59ae97f13dd9687a": "Innoncent User1",
-    "0xa8a83c0a6fabadf21dbb1da1d9b24455c56f5573": "Innoncent User2"
-}
-
 ### 攻击步骤
 
 1. 攻击合约调用`AnyswapV4Router`的`anySwapOutUnderlyingWithPermit`函数,传入参数：
